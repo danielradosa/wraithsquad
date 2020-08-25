@@ -1,26 +1,20 @@
 <template>
-  <div class="home">
-    <div class="ban">
-      <img
-        src="https://steamuserimages-a.akamaihd.net/ugc/946221105798544818/C10AA02C9576CD4B72CE121B23791CD6D8DE3943/"
-        alt=""
-      />
-    </div>
-
+  <div>
     <main>
-      <div class="featured">
-        <h1>featured wraithsquad products</h1>
-      </div>
-      <div class="wrap">
-        <div class="products">
-          <div class="item" v-for="item in avaibleProducts" :key="item.name">
-            <img :key="item.image" :src="item.image" />
-            <router-link :to="{ name: 'Product', params: { id: product.uuid } }"
-              >{{ item.name }} - <span>€{{ item.price }}</span>
-            </router-link>
-          </div>
+        <div class="wrap">
+            <div id="avaible">
+                <div class="p-avaible" v-for="item in avaibleProducts" :key="item.name">
+                    <router-link :to="{name: 'Product' , params:{ id: product.uuid }}">  
+                      <img :key="item.image" :src="item.image">
+                    </router-link>
+                    <div class="p-name">{{ item.name }}</div>
+                    <div class="p-price">€{{ item.price }}</div>
+                    <div class="btn-container">
+                        <button class="add-to-cart">ADD TO CART</button>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
     </main>
   </div>
 </template>
@@ -65,6 +59,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
-</style>
+<style lang="scss" scoped></style>
