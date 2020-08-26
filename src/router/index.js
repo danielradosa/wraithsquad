@@ -37,7 +37,7 @@ const routes = [
     component: Terms
   },
   {
-    path: '/product',
+    path: '/product/:uuid',
     name: 'Product',
     component: Product,
     props: true

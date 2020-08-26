@@ -15,7 +15,7 @@
         <div class="products">
           <div class="item" v-for="item in avaibleProducts" :key="item.name">
             <img :key="item.image" :src="item.image" />
-            <router-link :to="{ name: 'Product', params: { id: product.uuid } }"
+            <router-link @click.native="scrollToTop" :to="{ name: 'Product', params: { ...item }}"
               >{{ item.name }} - <span>€{{ item.price }}</span>
             </router-link>
           </div>
@@ -27,6 +27,11 @@
 
 <script>
 export default {
+  methods: {
+    scrollToTop() {
+      window.scrollTo(0, 0);
+    },
+  },
   data() {
     return {
       cart: [],
@@ -37,6 +42,8 @@ export default {
           image: require("@/assets/plastic-bag-pack.jpg"),
           id: 1,
           uuid: "plastic-bag-pack-v001",
+          description:
+            "Plastic bags pack containing 3HQ assets. Get yours now.",
         },
         {
           name: "VINYL TEXTURES 2-PACK v1",
@@ -44,6 +51,8 @@ export default {
           image: require("@/assets/vinyl-texture-pack.jpg"),
           id: 2,
           uuid: "vinyl-textures-pack-v001",
+          description:
+            "Vinyl textures pack containing 2HQ assets. Get yours now.",
         },
         {
           name: "STICKER PACK 6-PACK v1",
@@ -51,6 +60,7 @@ export default {
           image: require("@/assets/sticker-bag-pack.jpg"),
           id: 3,
           uuid: "sticker-bag-pack-v001",
+          description: "Sticker bag pack containing 6HQ assets. Get yours now.",
         },
       ],
       computed: {

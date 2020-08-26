@@ -11,15 +11,6 @@
     <div class="cart">
         <div class="item">
             <div class="left-item">
-                <img src="../assets/plastic-bag-pack.jpg" alt="">
-            </div>
-            <div class="right">
-                <h2>PLASTIC BAGS PACK v1 <span class="remove">X</span></h2>
-                <h3>Price <span>€0.33</span></h3>
-            </div>
-        </div>
-        <div class="item">
-            <div class="left-item">
                 <img src="../assets/vinyl-texture-pack.jpg" alt="">
             </div>
             <div class="right">
