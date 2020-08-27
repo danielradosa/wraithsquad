@@ -6,7 +6,7 @@
       </div>
       <div class="wrap-prod">
         <div class="prod-left">
-          <img :src="currentItem.image" alt="plastic_bag_pack" />
+          <img :src="currentItem.image" />
           <div class="prod-right">
             <h2>Description</h2>
             <p>

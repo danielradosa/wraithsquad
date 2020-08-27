@@ -10,7 +10,7 @@
                     <div class="p-name">{{ item.name }}</div>
                     <div class="p-price">€{{ item.price }}</div>
                     <div class="btn-container">
-                        <button class="add-to-cart">ADD TO CART</button>
+                        <button class="add-to-cart" v-on:click="addToCart(item)">ADD TO CART</button>
                     </div>
                 </div>
             </div>
@@ -20,11 +20,14 @@
 </template>
 
 <script>
+import {mapMutations} from 'vuex'
+
 export default {
   methods: {
-    scrollToTop() {
-      window.scrollTo(0, 0);
-    },
+    ...mapMutations(["ADD_TO_CART"]),
+    addToCart(item) {
+      this.ADD_TO_CART(item);
+    }
   },
   data() {
     return {

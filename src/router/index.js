@@ -7,6 +7,7 @@ import Cart from '../views/Cart.vue'
 import Product from '../components/Product.vue'
 import Missing from '../views/Missing.vue'
 import Terms from '../views/Terms.vue'
+import Account from '../views/Account.vue'
 
 Vue.use(VueRouter)
 
@@ -30,6 +31,11 @@ const routes = [
     path: '/cart',
     name: 'Cart',
     component: Cart
+  },
+  {
+    path: '/account',
+    name: 'Account',
+    component: Account
   },
   {
     path: '/terms',

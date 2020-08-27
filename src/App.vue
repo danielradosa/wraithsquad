@@ -392,6 +392,7 @@ button.add-to-cart {
   background-color: crimson;
   padding: 0.1em 0.5em;
   text-decoration: none;
+  cursor: pointer;
 }
 
 h3.terms {
@@ -433,9 +434,21 @@ h3.terms {
   .pay-btn button {
     font-size: 4vw;
   }
+
+  .login {
+    margin-top: 3em;
+  }
 }
 
 @media only screen and (min-width: 900px) {
+  input {
+    font-size: 2vw !important;
+  }
+
+  .login {
+    font-size: 6vw;
+    margin-top: 2em;
+  }
   .item img {
     width: 30%;
     padding: 0.5em;
@@ -494,6 +507,12 @@ h3.terms {
 }
 
 @media only screen and (min-width: 1300px) {
+  input {
+    font-size: 1vw !important;
+  }
+  .logon {
+    font-size: 1vw !important;
+  }
   .banner img {
     width: 30%;
   }
@@ -556,6 +575,10 @@ h3.terms {
 }
 
 @media only screen and (min-width: 1700px) {
+  .login {
+    margin-top: 1em;
+  }
+
   .banner img {
     width: 15%;
   }
@@ -614,11 +637,17 @@ h3.terms {
 <script>
 import Navigation from '@/components/Navigation.vue'
 import Footer from '@/components/Footer.vue'
+import {mapGetters} from 'vuex'
 
 export default {
   components: {
     Navigation,
     Footer
+  },
+  computed: {
+    ...mapGetters([
+      'myCart'
+    ])
   }
 }
 </script>

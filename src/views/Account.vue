@@ -1,0 +1,99 @@
+<template>
+  <div>
+    <h1 class="login">LOGIN</h1>
+    <div class="form">
+      <input type="text" name="username"  placeholder="Username" />
+      <input type="password" name="password"  placeholder="Password" />
+    </div>
+    <div class="lgn">
+      <button class="logon" type="button">LOGIN</button>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  name: "Login",
+  data() {
+    return {
+      
+    };
+  },
+  methods: {
+    
+  },
+};
+</script>
+
+<style scoped>
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+.login {
+  color: #2b00a6;
+  text-align: center;
+  text-decoration: line-through;
+}
+
+input {
+  margin: 1em;
+  font-size: 4vw;
+}
+
+.form {
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 3em;
+}
+
+input[type="text"]:focus {
+  border-radius: 2px;
+  background-color: white;
+  color: black;
+}
+
+input[type="password"]:focus {
+  border-radius: 2px;
+  background-color: white;
+  color: black;
+}
+
+input[type="text"] {
+  border: 1px solid white;
+  background-color: black;
+  color: white;
+  padding: 1em;
+  font-family: "Open Sans", sans-serif;
+  border-radius: 2px;
+  transition: 0.6s ease;
+}
+
+input[type="password"] {
+  border: 1px solid white;
+  background-color: black;
+  color: white;
+  padding: 1em;
+  font-family: "Open Sans", sans-serif;
+  border-radius: 2px;
+  transition: 0.6s ease;
+}
+
+.lgn {
+  display: flex;
+  justify-content: center;
+  margin-top: 3em;
+}
+
+button.logon {
+  border: 1px solid white;
+  text-align: center;
+  background-color: white;
+  color: black;
+  padding: 1em 0.5em;
+  width: 30%;
+  border-radius: 2px;
+  font-size: 4vw;
+  transition: 0.6s ease-in-out;
+}
+</style>

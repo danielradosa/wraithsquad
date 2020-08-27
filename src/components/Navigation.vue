@@ -10,7 +10,8 @@
           <router-link to="/">home</router-link>
           <router-link to="/shop">shop</router-link>
           <router-link to="/contact">contact</router-link>
-          <router-link to="/cart"><i class="fas fa-shopping-cart"></i><span> 0</span></router-link>
+          <router-link to="/account">account</router-link>
+          <router-link to="/cart"><i class="fas fa-shopping-cart"></i><span> {{countOfCartProducts}}</span></router-link>
           
         </nav>
       </div>
@@ -19,8 +20,15 @@
 </template>
 
 <script>
+import {mapGetters} from 'vuex'
+
 export default {
-  name: "Home",
+  name: "Navigation",
+  computed: {
+    ...mapGetters([
+      'countOfCartProducts'
+    ])
+  }
 };
 </script>
 
