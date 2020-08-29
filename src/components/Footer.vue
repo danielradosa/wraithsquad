@@ -33,6 +33,7 @@
 
     <footer>
       <h4>&copy; COPYRIGHT - WRAITHSQUAD 2089</h4>
+      <a href="#"><button class="fa fa-caret-up"></button></a>
     </footer>
   </div>
 </template>
@@ -47,4 +48,14 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+  .fa-caret-up {
+    border:none;
+    background-color: #2b00a6;
+    color: white;
+    width: 3em;
+    height: 3em;
+    border-radius: 4em;
+    margin-top: 1.5em;
+  }
+</style>

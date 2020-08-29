@@ -26,6 +26,7 @@ body {
   box-sizing: border-box;
   background-color: black;
   font-family: "Open Sans", sans-serif;
+  scroll-behavior: smooth !important;
 }
 
 a {
