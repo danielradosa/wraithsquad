@@ -1,3 +1,6 @@
+import firebase from 'firebase/app'
+import 'firebase/firestore'
+
 var firebaseConfig = {
     apiKey: "AIzaSyB8xqlNTWcU6feo50WVT93v6NKNzfRABuA",
     authDomain: "wraithsquad-test.firebaseapp.com",
@@ -9,3 +12,6 @@ var firebaseConfig = {
   };
   
   firebase.initializeApp(firebaseConfig);
+
+  export const db = firebase.firestore();
+  export const dbMenuAdd = db.collection('avaibleProducts');

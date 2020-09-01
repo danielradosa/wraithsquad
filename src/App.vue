@@ -511,8 +511,9 @@ h3.terms {
   input {
     font-size: 1vw !important;
   }
-  .logon {
+  .logon, .logon-out {
     font-size: 1vw !important;
+    width: 10% !important;
   }
   .banner img {
     width: 30%;

@@ -1,0 +1,110 @@
+<template>
+  <div>
+    <main>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <div class="btn-container">
+        <v-btn class="add-to-cart" to="/addNew">
+          ADD NEW ITEM
+        </v-btn>
+      </div>
+      <div class="wrap">
+        <div id="avaible">
+          <div
+            class="p-avaible"
+            v-for="item in avaibleProducts"
+            :key="item.name"
+          >
+            <router-link
+              @click.native="scrollToTop"
+              :to="{ name: 'Product', params: { ...item } }"
+            >
+              <img :key="item.image" :src="item.image" />
+            </router-link>
+            <div class="p-name">{{ item.name }}</div>
+            <div class="p-price">€{{ item.price }}</div>
+            <div class="btn-container">
+              <button class="edit">
+                EDIT
+              </button>
+              <button class="remove" @click="deleteProduct(item.id)">
+                REMOVE
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</template>
+
+<script>
+import { mapMutations } from "vuex";
+import { dbMenuAdd } from "../../firebase";
+
+export default {
+  methods: {
+    ...mapMutations(["ADD_TO_CART"]),
+    addToCart(item) {
+      this.ADD_TO_CART(item);
+    },
+    deleteProduct(id) {
+        dbMenuAdd.doc(id).delete().then(function() {
+        //    console.log("Document sucessfully deleted!");
+        }).catch(function(error) {
+        //    console.error("Error removing document: ", error);
+        })
+    },
+  },
+  data() {
+    return {
+      cart: [],
+      avaibleProducts: [],
+      computed: {
+        showProduct() {
+          const id = this.$route.params.id;
+          const product = this.avaibleProducts.find((p) => p.uuid == id);
+          return product;
+        },
+      },
+    };
+  },
+  created() {
+    dbMenuAdd.get().then((querySnapshot) => {
+      querySnapshot.forEach((doc => {
+        var avaibleItemData = doc.data();
+        this.avaibleProducts.push({
+          id: doc.id,
+          name: avaibleItemData.name,
+          price: avaibleItemData.price,
+          description: avaibleItemData.description,
+          uuid: avaibleItemData.uuid
+        })
+      }))
+    })
+  },
+};
+</script>
+
+<style lang="scss" scoped>
+    .edit {
+        color: white;
+        background-color: darkorange;
+        border: 1px solid white;
+        padding: 2em;
+        margin: 2em;
+        font-weight: bold;
+    }
+
+    .remove {
+        color: white;
+        background-color: crimson;
+        border: 1px solid white;
+        margin: 2em;
+        padding: 2em;
+        font-weight: bold;
+    }
+</style>

@@ -21,6 +21,7 @@
 
 <script>
 import {mapMutations} from 'vuex'
+import { dbMenuAdd } from "../../firebase";
 
 export default {
   methods: {
@@ -33,7 +34,7 @@ export default {
     return {
       cart: [],
       avaibleProducts: [
-        {
+        /*{
           name: "PLASTIC BAGS 3-PACK v1",
           price: 0.33,
           image: require("@/assets/plastic-bag-pack.jpg"),
@@ -58,7 +59,7 @@ export default {
           id: 3,
           uuid: "sticker-bag-pack-v001",
           description: "Sticker bag pack containing 6HQ assets. Get yours now.",
-        },
+        },*/
       ],
       computed: {
         showProduct() {
@@ -68,6 +69,20 @@ export default {
         },
       },
     };
+  },
+  created() {
+    dbMenuAdd.get().then((querySnapshot) => {
+      querySnapshot.forEach((doc => {
+        var avaibleItemData = doc.data();
+        this.avaibleProducts.push({
+          id: doc.id,
+          name: avaibleItemData.name,
+          price: avaibleItemData.price,
+          description: avaibleItemData.description,
+          uuid: avaibleItemData.uuid
+        })
+      }))
+    })
   },
 };
 </script>

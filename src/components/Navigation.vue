@@ -11,8 +11,7 @@
           <router-link to="/shop">shop</router-link>
           <router-link to="/contact">contact</router-link>
           <router-link to="/account">my account</router-link>
-          <router-link to="/cart"><i class="fas fa-shopping-cart"></i><span> {{countOfCartProducts}}</span></router-link>
-          
+          <router-link to="/cart"><i class="fas fa-shopping-cart"></i><span> {{countOfCartProducts}}</span></router-link>        
         </nav>
       </div>
     </header>
