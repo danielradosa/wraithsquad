@@ -15,7 +15,7 @@ export default new Vuex.Store({
       return state.cart
     },
     getTotal: state => {
-      return state.cart.reduce((total, lineItem) => total + lineItem.price, 0);
+      return state.cart.reduce((total, lineItem) => Number(total) + Number(lineItem.price), 0);
     }
   },
   mutations: {

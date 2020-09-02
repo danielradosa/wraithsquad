@@ -7,9 +7,9 @@
       <br />
       <br />
       <div class="btn-container">
-        <v-btn class="add-to-cart" to="/addNew">
+       <router-link to="/addNew"> <button class="add-to-cart">
           ADD NEW ITEM
-        </v-btn>
+        </button></router-link>
       </div>
       <div class="wrap">
         <div id="avaible">
@@ -53,9 +53,9 @@ export default {
     },
     deleteProduct(id) {
         dbMenuAdd.doc(id).delete().then(function() {
-        //    console.log("Document sucessfully deleted!");
+           console.log("Document sucessfully deleted!");
         }).catch(function(error) {
-        //    console.error("Error removing document: ", error);
+          console.error("Error removing document: ", error);
         })
     },
   },
@@ -89,7 +89,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style type="scss"  scoped>
     .edit {
         color: white;
         background-color: darkorange;

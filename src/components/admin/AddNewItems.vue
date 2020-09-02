@@ -2,20 +2,18 @@
   <div class="grep">
     <main>
       <h1 class="title">Add New Item</h1>
-      <v-text-field dark label="Name Of Item" required v-model="name">
-      </v-text-field>
-      <v-text-field dark label="Description" required v-model="description">
-      </v-text-field>
-      <v-text-field dark label="Price Of Item" required v-model="price">
-      </v-text-field>
-       <v-text-field dark label="UUID" required v-model="uuid">
-      </v-text-field>
-      <v-btn @click="addNewMenuItem()">
-        Add Item </v-btn
-      >&nbsp;
-      <v-btn>
+      <label for="iname">Item Name:</label><br>
+      <input type="text" required v-model="name" />
+      <label for="desc">Description:</label>
+      <input type="text" required v-model="description" />
+      <label for="price">Price:</label>
+      <input type="text" required v-model="price" />
+      <label for="uuid">UUID:</label>
+      <input type="text" required v-model="uuid" />
+      <button @click="addNewMenuItem()"> Add Item </button>&nbsp;
+      <button>
         Cancel
-      </v-btn>
+      </button>
     </main>
   </div>
 </template>
@@ -26,10 +24,10 @@ import { dbMenuAdd } from "../../../firebase";
 export default {
   data() {
     return {
-      name: '',
-      description: '',
-      price: '',
-      uuid: ''
+      name: "",
+      description: "",
+      price: "",
+      uuid: "",
     };
   },
   methods: {
@@ -38,7 +36,7 @@ export default {
         name: this.name,
         description: this.description,
         price: this.price,
-        uuid: this.uuid
+        uuid: this.uuid,
       });
     },
   },
@@ -46,6 +44,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+label {
+  color: white;
+}
+
 .title {
   color: white;
   text-align: center;
