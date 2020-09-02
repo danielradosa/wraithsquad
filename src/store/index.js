@@ -20,7 +20,19 @@ export default new Vuex.Store({
   },
   mutations: {
     ADD_TO_CART: (state, product) => {
-      state.cart.push(product)
+       state.cart.forEach(item => {
+         
+          if(state.cart.find(itemInCart => item.name == itemInCart.name) )
+            { 
+             item =  state.cart.find(itemInCart => item.name == itemInCart.name);
+             item.price*2
+           //   state.cart.push(product)
+          }
+        else {
+          state.cart.push(product)
+        }
+      })
+      console.log("testies: ", product.price);
     },
     REMOVE_FROM_CART: (state, product) => {
       state.cart.splice(product, 1)
