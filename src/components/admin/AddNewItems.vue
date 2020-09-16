@@ -2,7 +2,7 @@
   <div class="grep">
     <main>
       <h1 class="title">Add New Item</h1>
-      <label for="iname">Item Name:</label><br>
+      <label for="iname">Item Name:</label><br />
       <input type="text" required v-model="name" />
       <label for="desc">Description:</label>
       <input type="text" required v-model="description" />
@@ -10,7 +10,8 @@
       <input type="text" required v-model="price" />
       <label for="uuid">UUID:</label>
       <input type="text" required v-model="uuid" />
-      <button @click="addNewMenuItem()"> Add Item </button>&nbsp;
+      <input type="file" id="file" name="file" @change="uploadImage" />
+      <button @click="addNewMenuItem()">Add Item</button>&nbsp;
       <button>
         Cancel
       </button>
@@ -19,7 +20,7 @@
 </template>
 
 <script>
-import { dbMenuAdd } from "../../../firebase";
+import { dbMenuAdd, fb } from "../../../firebase";
 
 export default {
   data() {
@@ -31,6 +32,13 @@ export default {
     };
   },
   methods: {
+    uploadImage(e) {
+      let file = e.target.files[0];
+      console.log("Test image file", file);
+      var storageRef = fb.storage().ref('products/' + file.name);
+
+      let uploadTask = storageRef.put(file);
+    },
     addNewMenuItem() {
       dbMenuAdd.add({
         name: this.name,

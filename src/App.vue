@@ -6,31 +6,31 @@
   </div>
 </template>
 
-<style lang="scss">
+<style type="scss">
 #app {
-  -webkit-font-smoothing: antialiased !important;
-  -moz-osx-font-smoothing: grayscale !important; 
-  padding: 0 !important;
-  margin: 0 auto !important;
-  box-sizing: border-box !important;
-  background-color: black !important;
-  font-family: "Open Sans", sans-serif !important;
-  scroll-behavior: smooth !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; 
+  padding: 0;
+  margin: 0 auto;
+  box-sizing: border-box;
+  background-color: black;
+  font-family: "Open Sans", sans-serif;
+  scroll-behavior: smooth;
 }
 
 .v-application code {
-    all: unset !important;
+    all: unset;
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
 
 body {
   padding: 0;
-  margin: 0 auto !important;
+  margin: 0 auto;
   box-sizing: border-box;
   background-color: black;
   font-family: "Open Sans", sans-serif;
-  scroll-behavior: smooth !important;
+  scroll-behavior: smooth;
 }
 
 a {
@@ -95,7 +95,7 @@ nav a:hover {
 
 .ban img {
   width: 50%;
-  margin-top: -2em !important;
+  margin-top: -2em;
 }
 
 main {
@@ -109,13 +109,13 @@ main {
   width: 100%;
   background-color: black;
   font-size: 2vw;
-  margin-top: 3em !important;
+  margin-top: 3em;
 }
 
 .wrap {
   display: flex;
   justify-content: center;
-  margin-top: 3em !important;
+  margin-top: 3em;
 }
 
 .item {
@@ -133,7 +133,7 @@ main {
   color: #2afd00;
   text-decoration: none;
   font-weight: bold;
-  margin-top: -3em !important;
+  margin-top: -3em;
   transition: 0.6s ease-in-out;
 }
 
@@ -146,12 +146,12 @@ main {
   justify-content: center;
   color: #2afd00;
   font-size: 2vw;
-  padding: 6em !important;
+  padding: 6em;
   text-align: center;
 }
 
 h2 {
-  text-align: justify !important;
+  text-align: justify;
 }
 
 h2 span {
@@ -167,27 +167,27 @@ h2 span {
 }
 
 .bot-left {
-  padding: 2em !important;
-  text-align: center !important;
+  padding: 2em;
+  text-align: center;
 }
 
 .bot-left a i {
-  font-size: 2em !important;
-  padding: 0.3em !important;
+  font-size: 2em;
+  padding: 0.3em;
   transition: 0.6s ease-in-out;
 }
 
 .bot-right {
-  padding: 2em !important;
-  text-align: left !important;
+  padding: 2em;
+  text-align: left;
 }
 
 .bot-right a {
-  color: #2afd00 !important;
-  font-weight: bold !important;
-  text-decoration: none !important;
-  text-transform: uppercase !important;
-  padding: 0.3em !important;
+  color: #2afd00;
+  font-weight: bold;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 0.3em;
   transition: 0.6s ease-in-out;
 }
 
@@ -196,17 +196,17 @@ h2 span {
 }
 
 footer {
-  width: 100% !important;
-  background-color: #2afd00 !important;
-  bottom: 0 !important;
-  display: flex !important;
-  justify-content: center !important;
-  margin-top: 6em !important;
+  width: 100%;
+  background-color: #2afd00;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  margin-top: 6em;
 }
 
 h4 {
-  text-align: center !important;
-  padding: 0.5em !important;
+  text-align: center;
+  padding: 0.5em;
 }
 
 .wrap-prod {
@@ -243,7 +243,7 @@ h4 {
 .featured-pack {
   color: #2b00a6;
   text-align: center;
-  margin-top: 3em !important;
+  margin-top: 3em;
   font-size: 3vw;
 }
 
@@ -277,10 +277,10 @@ h4 {
 
 #avaible {
   max-width: 100%;
-  margin: 0 auto !important;
+  margin: 0 auto;
   display: flex;
-  margin-top: -6em !important;
-  margin-bottom: 6em !important;
+  margin-top: -6em;
+  margin-bottom: 6em;
   flex-wrap: wrap;
 }
 
@@ -290,7 +290,7 @@ h4 {
 }
 
 .p-avaible {
-  margin-top: 3em !important;
+  margin-top: 3em;
 }
 
 .p-name {
@@ -322,7 +322,7 @@ button.add-to-cart {
 .btn-container {
   display: flex;
   justify-content: center;
-  margin-top: 1em !important;
+  margin-top: 1em;
 }
 
 .add-to-cart:hover {
@@ -348,7 +348,7 @@ button.add-to-cart {
 }
 
 .top-cart {
-  margin-top: -6em !important;
+  margin-top: -6em;
 }
 
 .total h3 {
@@ -370,7 +370,7 @@ button.add-to-cart {
 }
 
 .pay-btn button {
-  margin-top: 3em !important;
+  margin-top: 3em;
   border-radius: 2px;
   background-color: gold;
   color: black;
@@ -384,11 +384,11 @@ button.add-to-cart {
 }
 
 .item .right {
-  margin-top: -4em !important;
+  margin-top: -4em;
 }
 
 .total {
-  margin-top: 6em !important;
+  margin-top: 6em;
   width: 100%;
   justify-content: center;
 }
@@ -403,7 +403,7 @@ button.add-to-cart {
 h3.terms {
     text-align: justify;
     font-size: 4vw;
-    padding: 3em !important;
+    padding: 3em;
     border:none;
 }
 
@@ -425,7 +425,7 @@ h3.terms {
 
   .ban img {
     width: 30%;
-    margin-top: 2em !important;
+    margin-top: 2em;
   }
 
   .cart {
@@ -441,7 +441,7 @@ h3.terms {
   }
 
   .login {
-    margin-top: 3em !important;
+    margin-top: 3em;
   }
 }
 
@@ -452,21 +452,21 @@ h3.terms {
 
   .login {
     font-size: 6vw;
-    margin-top: 2em !important;
+    margin-top: 2em;
   }
   .item img {
     width: 30%;
     padding: 0.5em;
   }
   .item a {
-    margin-top: 0 !important;
+    margin-top: 0;
     align-self: center;
   }
   .bot-left {
-    margin-right: 12em !important;
+    margin-right: 12em;
   }
   .bot-right {
-    margin-left: 12em !important;
+    margin-left: 12em;
   }
   .prod-left img {
     width: 40%;
@@ -476,14 +476,14 @@ h3.terms {
   }
   .prod-right p {
     font-size: 3vw;
-    margin-top: -0.2em !important;
+    margin-top: -0.2em;
   }
   .prod-right {
-    margin-top: 4em !important;
+    margin-top: 4em;
   }
   #paypal-button-container {
     width: 80%;
-    margin-top: -0.5em !important;
+    margin-top: -0.5em;
   }
   .p-avaible {
     width: 45%;
@@ -504,7 +504,7 @@ h3.terms {
     font-size: 2.5vw;
   }
   .item .right {
-    margin-top: -2em !important;
+    margin-top: -2em;
   }
   .ex-img img {
     width: 40%;
@@ -524,22 +524,22 @@ h3.terms {
   }
   .ban img {
     width: 20%;
-    margin-top: 1em !important;
+    margin-top: 1em;
   }
   .featured {
     font-size: 1.5vw;
   }
   .links {
-    margin-top: -6em !important;
+    margin-top: -6em;
   }
   .prod-right {
-    margin-top: 6em !important;
+    margin-top: 6em;
   }
   .prod-right p {
-    margin-top: 1em !important;
+    margin-top: 1em;
   }
   .prod-right #paypal-button-container {
-    margin-top: 1em !important;
+    margin-top: 1em;
     width: 80%;
   }
   .p-avaible {
@@ -548,7 +548,7 @@ h3.terms {
   }
   #avaible {
     justify-content: center;
-    margin-top: -3em !important;
+    margin-top: -3em;
   }
   .p-name,
   .p-price,
@@ -562,17 +562,17 @@ h3.terms {
     font-size: 2vw;
   }
   .item .right {
-    margin-top: -2em !important;
+    margin-top: -2em;
   }
   .pay-btn button {
     font-size: 1.5vw;
-    margin-top: 6em !important;
+    margin-top: 6em;
   }
   .total {
     font-size: 1.5vw;
   }
   .item .right {
-    margin-top: 4em !important;
+    margin-top: 4em;
     text-align: left;
   }
   h3.terms {
@@ -582,7 +582,7 @@ h3.terms {
 
 @media only screen and (min-width: 1700px) {
   .login {
-    margin-top: 1em !important;
+    margin-top: 1em;
   }
 
   .banner img {
@@ -592,7 +592,7 @@ h3.terms {
     font-size: 1vw;
   }
   .prod-right {
-    margin-top: 8em !important;
+    margin-top: 8em;
   }
   .prod-right p {
     font-size: 2.5vw;
@@ -611,13 +611,13 @@ h3.terms {
 
   .pay-btn button {
     font-size: 1.5vw;
-    margin-top: 6em !important;
+    margin-top: 6em;
   }
   .total {
     font-size: 1vw;
   }
   .item .right {
-    margin-top: 4em !important;
+    margin-top: 4em;
     text-align: left;
   }
 }

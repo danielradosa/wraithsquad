@@ -27,9 +27,6 @@
             <div class="p-name">{{ item.name }}</div>
             <div class="p-price">€{{ item.price }}</div>
             <div class="btn-container">
-              <button class="edit">
-                EDIT
-              </button>
               <button class="remove" @click="deleteProduct(item.id)">
                 REMOVE
               </button>

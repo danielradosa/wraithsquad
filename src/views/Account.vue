@@ -1,52 +1,83 @@
 <template>
   <div>
     <h1 class="login">LOGIN</h1>
-    <div class="form">
-      <input type="text" name="username" v-model="email"  placeholder="Username" />
-      <input type="password" name="password" v-model="password" placeholder="Password" />
+    <div class="form" v-if="!currentUser">
+      <input
+        type="text"
+        name="username"
+        v-model="email"
+        placeholder="Username"
+      />
+      <input
+        type="password"
+        name="password"
+        v-model="password"
+        placeholder="Password"
+      />
     </div>
     <div class="lgn">
-      <button class="logon" @click.prevent="signIn()" type="button">LOGIN</button>
-      <button class="logon-out" @click.prevent="signOut()" type="button">SIGN OUT</button>
+      <div
+        class="fb-login-button"
+        data-size="large"
+        data-button-type="continue_with"
+        data-layout="default"
+        data-auto-logout-link="false"
+        data-use-continue-as="true"
+        data-width=""
+      ></div>
+      <button class="logon" @click.prevent="signIn()" type="button">
+        LOGIN
+      </button>
+      <button class="logon-out" @click.prevent="signOut()" type="button">
+        SIGN OUT
+      </button>
     </div>
   </div>
 </template>
 
 <script>
-import firebase from 'firebase'
-import 'firebase/firestore'
+import firebase from "firebase";
+import "firebase/firestore";
 
 export default {
   name: "Login",
   data() {
     return {
-      email: '',
-      password: ''
+      email: "",
+      password: "",
     };
   },
   methods: {
     signIn() {
-      firebase.auth().signInWithEmailAndPassword(this.email, this.password).then(() => {
-        this.$router.replace('/admin')
-      }).catch(function(error) {
-        var errorCode = error.message;
-        var errorMessage = error.message;
-        if (errorCode === 'auth/wrong-password') {
-          alert ("Wrong password")
-        } else {
-          alert (errorMessage)
-        }
-        console.log(error)
-      })
+      firebase
+        .auth()
+        .signInWithEmailAndPassword(this.email, this.password)
+        .then(() => {
+          this.$router.replace("/admin");
+        })
+        .catch(function(error) {
+          var errorCode = error.message;
+          var errorMessage = error.message;
+          if (errorCode === "auth/wrong-password") {
+            alert("Wrong password");
+          } else {
+            alert(errorMessage);
+          }
+          console.log(error);
+        });
     },
     signOut() {
-      firebase.auth().signOut().then(() => {
-        alert('Logged Out');
-        this.$router.replace('/')
-      }).catch(error => {
-        alert(error)
-      })
-    }
+      firebase
+        .auth()
+        .signOut()
+        .then(() => {
+          alert("Logged Out");
+          this.$router.replace("/");
+        })
+        .catch((error) => {
+          alert(error);
+        });
+    },
   },
 };
 </script>
@@ -130,7 +161,7 @@ button.logon-out {
   background-color: crimson;
   color: white;
   padding: 1em 0.5em;
-  width:30%;
+  width: 30%;
   border-radius: 2px;
   font-size: 4vw;
   transition: 0.6s ease-in-out;
