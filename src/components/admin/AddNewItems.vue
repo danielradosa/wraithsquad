@@ -29,6 +29,7 @@ export default {
       description: "",
       price: "",
       uuid: "",
+      image: null
     };
   },
   methods: {
@@ -38,6 +39,18 @@ export default {
       var storageRef = fb.storage().ref('products/' + file.name);
 
       let uploadTask = storageRef.put(file);
+
+     /*
+eslint-disable */ uploadTask.on('state_changed', (snapshot) => {
+
+     /*
+eslint-disable */ },(error) => {
+        }, () => {
+        uploadTask.snapshot.ref.getDownloadURL().then((downloadURL) => {
+          this.image = downloadURL
+          console.log('File avaible at', downloadURL);
+        });
+      });
     },
     addNewMenuItem() {
       dbMenuAdd.add({
@@ -45,6 +58,7 @@ export default {
         description: this.description,
         price: this.price,
         uuid: this.uuid,
+        image: this.image
       });
     },
   },

@@ -19,7 +19,7 @@
         <div class="right">
           <h2>
             {{ item.name
-            }}<span class="remove" v-on:click="removeFromCart">X</span>
+            }} <span class="remove" v-on:click="removeFromCart">X</span>
           </h2>
           <h3>
             Price <span>€{{ item.price }}</span>

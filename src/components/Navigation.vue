@@ -3,9 +3,6 @@
     <div class="banner">
       <img src="@/assets/lg.png" alt="" />
     </div>
-  <div v-if="currentUser">
-  <p style="color:red; text-center">Logged in as ADMIN </p>
-  </div>
     <header>
       <div class="menu">
         <nav>

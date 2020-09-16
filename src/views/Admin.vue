@@ -78,7 +78,8 @@ export default {
           name: avaibleItemData.name,
           price: avaibleItemData.price,
           description: avaibleItemData.description,
-          uuid: avaibleItemData.uuid
+          uuid: avaibleItemData.uuid,
+          image: avaibleItemData.image
         })
       }))
     })

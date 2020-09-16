@@ -16,15 +16,6 @@
       />
     </div>
     <div class="lgn">
-      <div
-        class="fb-login-button"
-        data-size="large"
-        data-button-type="continue_with"
-        data-layout="default"
-        data-auto-logout-link="false"
-        data-use-continue-as="true"
-        data-width=""
-      ></div>
       <button class="logon" @click.prevent="signIn()" type="button">
         LOGIN
       </button>
