@@ -10,7 +10,7 @@
       <input type="text" required v-model="price" />
       <label for="uuid">UUID:</label>
       <input type="text" required v-model="uuid" />
-      <input type="file" id="file" name="file" @change="uploadImage" />
+      <input for="image" type="file" id="file" name="file" @change="uploadImage" />
       <button @click="addNewMenuItem()">Add Item</button>&nbsp;
       <button>
         Cancel
