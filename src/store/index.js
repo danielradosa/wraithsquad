@@ -1,11 +1,13 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import { dbMenuAdd } from "../../firebase";
 
 Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
     cart: [],
+    avaibleProducts : [],
     currentUser: null
   },
   getters: {
@@ -20,6 +22,9 @@ export default new Vuex.Store({
     },
     currentUser: state => {
       return state.currentUser
+    },
+    getAvaibleProducts: state => {
+      return state.avaibleProducts
     }
   },
   mutations: {
@@ -34,17 +39,38 @@ export default new Vuex.Store({
     REMOVE_FROM_CART: (state, product) => {
       state.cart.splice(product, 1)
     },
-    userStatus (state, user) {
+    userStatus(state, user) {
       if (user) {
         state.currentUser = user
       } else {
         state.currentUser = null
       }
-    }
+    },
+    setAvaibleProducts: state => {
+      let avaibleProducts = []
+
+      dbMenuAdd.onSnapshot((snapshotItems) => {
+        avaibleProducts = []
+        snapshotItems.forEach((doc) => {
+          var avaibleItemData = doc.data();
+         // console.log("test", avaibleItemData)
+          avaibleProducts.push({
+            ...avaibleItemData,
+            id: doc.id
+            
+          })
+        })
+      })
+      state.avaibleProducts = avaibleProducts
+   
+    },
   },
   actions: {
     setUser(context, user) {
       context.commit('userStatus', user)
+    },
+    setAvaibleProducts(context) {
+      context.commit('setAvaibleProducts')
     }
   },
   modules: {

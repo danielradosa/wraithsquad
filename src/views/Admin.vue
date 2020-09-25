@@ -7,9 +7,11 @@
       <br />
       <br />
       <div class="btn-container">
-       <router-link to="/addNew"> <button class="add-to-cart">
-          ADD NEW ITEM
-        </button></router-link>
+        <router-link to="/addNew">
+          <button class="add-to-cart">
+            ADD NEW ITEM
+          </button></router-link
+        >
       </div>
       <div class="wrap">
         <div id="avaible">
@@ -39,21 +41,26 @@
 </template>
 
 <script>
-import { mapMutations } from "vuex";
+import { mapMutations, mapGetters } from "vuex";
 import { dbMenuAdd } from "../../firebase";
 
 export default {
   methods: {
     ...mapMutations(["ADD_TO_CART"]),
+    ...mapGetters(["getAvaibleProducts"]),
     addToCart(item) {
       this.ADD_TO_CART(item);
     },
     deleteProduct(id) {
-        dbMenuAdd.doc(id).delete().then(function() {
-           console.log("Document sucessfully deleted!");
-        }).catch(function(error) {
-          console.error("Error removing document: ", error);
+      dbMenuAdd
+        .doc(id)
+        .delete()
+        .then(function() {
+          console.log("Document sucessfully deleted!");
         })
+        .catch(function(error) {
+          console.error("Error removing document: ", error);
+        });
     },
   },
   data() {
@@ -66,43 +73,34 @@ export default {
           const product = this.avaibleProducts.find((p) => p.uuid == id);
           return product;
         },
+         avaibleProducts() {
+          return this.$store.getters.getAvaibleProducts;
+        },
       },
     };
   },
-  created() {
-    dbMenuAdd.get().then((querySnapshot) => {
-      querySnapshot.forEach((doc => {
-        var avaibleItemData = doc.data();
-        this.avaibleProducts.push({
-          id: doc.id,
-          name: avaibleItemData.name,
-          price: avaibleItemData.price,
-          description: avaibleItemData.description,
-          uuid: avaibleItemData.uuid,
-          image: avaibleItemData.image
-        })
-      }))
-    })
+ beforeCreate() {
+    this.$store.dispatch("setAvaibleProducts");
   },
 };
 </script>
 
-<style type="scss"  scoped>
-    .edit {
-        color: white;
-        background-color: darkorange;
-        border: 1px solid white;
-        padding: 2em;
-        margin: 2em;
-        font-weight: bold;
-    }
+<style type="scss" scoped>
+.edit {
+  color: white;
+  background-color: darkorange;
+  border: 1px solid white;
+  padding: 2em;
+  margin: 2em;
+  font-weight: bold;
+}
 
-    .remove {
-        color: white;
-        background-color: crimson;
-        border: 1px solid white;
-        margin: 2em;
-        padding: 2em;
-        font-weight: bold;
-    }
+.remove {
+  color: white;
+  background-color: crimson;
+  border: 1px solid white;
+  margin: 2em;
+  padding: 2em;
+  font-weight: bold;
+}
 </style>
