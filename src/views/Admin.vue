@@ -17,7 +17,7 @@
         <div id="avaible">
           <div
             class="p-avaible"
-            v-for="item in avaibleProducts"
+            v-for="item in avaibleProds"
             :key="item.name"
           >
             <router-link
@@ -67,19 +67,19 @@ export default {
     return {
       cart: [],
       avaibleProducts: [],
-      computed: {
-        showProduct() {
-          const id = this.$route.params.id;
-          const product = this.avaibleProducts.find((p) => p.uuid == id);
-          return product;
-        },
-         avaibleProducts() {
-          return this.$store.getters.getAvaibleProducts;
-        },
-      },
     };
   },
- beforeCreate() {
+  computed: {
+    showProduct() {
+      const id = this.$route.params.id;
+      const product = this.avaibleProducts.find((p) => p.uuid == id);
+      return product;
+    },
+    avaibleProds() {
+      return this.$store.getters.getAvaibleProducts;
+    },
+  },
+  beforeCreate() {
     this.$store.dispatch("setAvaibleProducts");
   },
 };

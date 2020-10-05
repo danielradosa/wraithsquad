@@ -7,7 +7,7 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     cart: [],
-    avaibleProducts : [],
+    avaibleProducts: [],
     currentUser: null
   },
   getters: {
@@ -47,22 +47,31 @@ export default new Vuex.Store({
       }
     },
     setAvaibleProducts: state => {
+
       let avaibleProducts = []
 
       dbMenuAdd.onSnapshot((snapshotItems) => {
+
         avaibleProducts = []
+
         snapshotItems.forEach((doc) => {
+
           var avaibleItemData = doc.data();
-         // console.log("test", avaibleItemData)
+
           avaibleProducts.push({
+
             ...avaibleItemData,
+
             id: doc.id
-            
+
           })
+
         })
+
+        state.avaibleProducts = avaibleProducts // moved inside
+
       })
-      state.avaibleProducts = avaibleProducts
-   
+
     },
   },
   actions: {
