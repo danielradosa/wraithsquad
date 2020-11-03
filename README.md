@@ -1,6 +1,6 @@
 # Wraithsquad Webshop - Selling digital assets
 
-## Using / Will try to make work
+## Will try to make work in the future
 VueJS, Vuex, Firebase\
 Will try to implement PayPal.\
 Also let users create real accounts,\
